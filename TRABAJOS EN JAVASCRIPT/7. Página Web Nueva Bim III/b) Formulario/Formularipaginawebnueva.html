@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso de Usuarios Nueva Página Web Bim III</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" 
+    rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <h4>Acceso de Usuarios</h4>
+    <h5>Bienvenido a Los Mejores Pilotos de F1</h5>
+    <br>
+    <h5>Para poder visualizar nuestra página Web, te invitamos a ingresar tu usuario y contraseña</h5>
+    <!--Una Alerta para que profe Helmut conozca su usuario y su contraseña sin necesidad de decirle cuál es.-->
+    <seccion>
+        <h6 onclick="preguntar()"> Profe Helmut, Click Aquí, por Favor. </h6>
+        
+    </seccion>
+
+    <!--Se pone el formmulario-->
+    <form>
+        <h5>Usuarios</h5>
+        <!--Usamos la etiqueta "input" para solicitar los datos-->
+        <input type="text" id="usuario" onclick="">
+
+        <!--Vamos a solicitarle al usuario una contraseña-->
+        <h5>Contraseña</h5>
+         <!--Usamos la etiqueta "input" para solicitar los datos, en este caso una contraseña-->
+        <input type="password" id="clave">
+        
+        <!--Se utiliza el input para colocar un botón y el value para colocarle texto-->
+        <br>
+        <br>
+        <input type="button" value="Confirmar" onclick="verificar()"> 
+
+        <!--Se hará una función-->
+        <script>
+            let control = 0;
+            let Contraseñacorrecta = 'ProfeHelmutPass';
+            let Usuariocorrecto = 'Prof.H.Ico.'
+
+            //Se declara una función para corroborar que el usuario y contraseña son correctos
+            function verificar(){
+                let usuario = document.getElementById('usuario').value;
+                let contraseña = document.getElementById('clave').value;
+                if (usuario !== Usuariocorrecto || contraseña !== Contraseñacorrecta){
+                    alert('El usuario o la contraseña es incorrecta, intenta de nuevo.');
+                } else{
+                    window.open("https://f1circuits.000webhostapp.com/");//Solo a modo de prueba se usó el link de la página WEb anterior.
+                }                               
+            }
+
+            //Se declara una función para otorgar el usuario y contraseña a profe Helmut
+            function preguntar() {
+            let respuesta = prompt("¿Cuál es el primer nombre del alumno que hizo esta página web? (Por favor profe, responder en MAYÚSCULAS.)");
+            if (respuesta && respuesta.toUpperCase() === 'RODRIGO') {
+                alert(`Usuario: ${Usuariocorrecto}\nContraseña: ${Contraseñacorrecta}\nPor favor tomar una fotografía profe, para tener a mano sus credenciales.`);
+            } else {
+                alert('Respuesta incorrecta, intenta de nuevo.');
+            }
+        }
+        </script>
+    </form>    
+</body>
+</html>

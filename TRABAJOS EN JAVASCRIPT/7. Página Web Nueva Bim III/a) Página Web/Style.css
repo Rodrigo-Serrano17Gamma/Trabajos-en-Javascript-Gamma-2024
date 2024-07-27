@@ -1,0 +1,336 @@
+/* || General Setup*/  /*Estilo de la página de web del Coba´n imperial*/
+
+html, body{
+    margin: 0; /*Margen laterales*/
+    padding: 0; /*Margen superior e inferior*/
+}
+
+html {
+    font-size: 10px;
+    background-color: #F5F5F5; /* Light grey background color */
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* || Typography*/
+
+h1, h2, h3 {
+    font-family: 'Sonsie One', cursive;
+    color: #0B3D91; /* Deep blue for titles */
+}
+
+p, input, li{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #333333; /* Dark grey for text */
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: #0B3D91; /* Deep blue for titles */
+    text-shadow: 2px 2px 10px #AAAAAA; /* Light grey shadow for contrast */
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: #0B3D91; /* Deep blue for titles */
+}
+
+h3 {
+    font-size: 2.2rem;
+    color: #0B3D91; /* Deep blue for titles */
+}
+
+p, li {
+    font-size: 1.6rem; /*1 rem = 16 px*/
+    line-height: 1.5;
+}
+
+/* || header layout*/
+
+nav, article, aside, footer {
+    background-color: #FFFFFF; /* White background */
+    padding: 1%;
+}
+
+nav {
+    height: 50px;
+    background-color: #FF5733; /* Bright orange for nav bar */
+    display: flex;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;
+}
+
+nav li {
+    display: inline;
+    text-align: center;
+    display: flex;
+}
+
+nav a {
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF; /* White color for contrast */
+}
+
+nav form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+input {
+    font-size: 1.6rem;
+    height: 32px;
+}
+
+input[type="search"] {
+    flex: 3;
+}
+
+input[type="submit"] {
+    flex: 1;
+    margin-left: 1rem;
+    background: #FF5733; /* Bright orange */
+    border: 0;
+    color: white;
+}
+
+/* || main layout*/
+
+main {
+    display: flex;
+}
+
+article {
+    flex: 4;
+}
+
+aside {
+    flex: 1;
+    margin-left: 10px;
+    background-color: #F5F5F5; /* Light grey background color */
+}
+
+aside li {
+    padding-bottom: 10px;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+
+/*Primeraa Animación*/
+/*Pulso: Hace que un elemento se agrande y luego vuelva a su tamaño original.*/
+#c {
+    animation: pulso 1s infinite alternate;
+}
+
+@keyframes pulso {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/*Segunda Animación*/
+/*Rotación y escala: Combina rotación y escalado en un mismo efecto.*/
+#a {
+    animation: rotar-escalar 5s infinite alternate;
+}
+
+@keyframes rotar-escalar {
+    from {
+        transform: rotate(0deg) scale(0.5);
+    }
+    to {
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+
+
+/*Desplazamiento de izquierda a derecha: Desplaza un elemento de izquierda a derecha.*/
+#b {
+    animation: desplazar 2s infinite alternate;
+}
+
+@keyframes desplazar {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200px);
+    }
+}
+
+/*Parpadeo: Hace que un elemento parpadee.*/
+#d {
+    animation: parpadear 4s infinite;
+}
+
+@keyframes parpadear {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#e {
+    animation: balancear 2s infinite alternate;
+}
+
+@keyframes balancear {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+/*Zoom: Hace que un elemento aumente su tamaño.*/
+#f {
+    animation: zoom 5s infinite alternate;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/*Desvanecimiento: Hace que un elemento se desvanezca gradualmente.*/
+#g {
+    animation: desplazar 2s infinite alternate;
+}
+
+@keyframes desplazar {
+    from {
+        transform: translateX(-280px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+/*Animación de crecer*/ #h {
+    animation: crecer 2s infinite ease;
+}
+
+@keyframes crecer {
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/*sacudida*/ #i {
+    animation: sacudir 0.25s ease infinite alternate;
+}
+
+@keyframes sacudir {
+    from {
+        transform: translateX(-15px);
+    }
+    to {
+        transform: translateX(15px);
+    }
+}
+
+/*.bordes-animados*/ #j {
+    animation: bordesAnimados 1s infinite alternate;
+}
+
+@keyframes bordesAnimados {
+    0% {
+        border-radius: 0%;
+    }
+    100% {
+        border-radius: 50%;
+    }
+}
+
+/*.aparicion-giratoria*/ #k {
+    animation: aparecerGiratorio 2s infinite ease-in-out;
+}
+
+@keyframes aparecerGiratorio {
+    0% {
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    
+
+}
+
+/*.sacudida-vertical*/ #l {
+    animation: sacudirVertical 0.5s ease infinite alternate;
+}
+
+@keyframes sacudirVertical {
+    from {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(5px);
+    }
+}
+
+/*.penduleo*/ #m {
+    animation: pendular 2s infinite alternate;
+    transform-origin: top;
+}
+
+@keyframes pendular {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+/*.desplazamiento-diagonal*/ #n {
+    animation: desplazarDiagonal 2s infinite alternate;
+}
+
+@keyframes desplazarDiagonal {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
