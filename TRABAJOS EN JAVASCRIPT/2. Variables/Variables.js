@@ -6,7 +6,7 @@
 
 /* Con var, las variables se vuelven GLOBALES, usables para todo el archivo con el mismo valor. */
 
-var nombre = "Mateo";
+var nombre = "Rodrigo Serrano";
 
 
 
