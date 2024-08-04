@@ -1,0 +1,99 @@
+/* || General Setup */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    background-color: #F5F5F5;
+    background-image: url('https://cdn-2.motorsport.com/images/amp/2y3qQnn6/s1000/formula-1-abu-dhabi-gp-2023-se-2.jpg'); /* Replace with the path to your F1 image */
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight white overlay to ensure text readability */
+    padding: 20px;
+}
+
+/* || Typography */
+
+h1, h2, h3, h4, h5, h6, p, input, li {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #333333;
+    margin: 0 0 15px;
+}
+
+h1, h2, h3 {
+    font-family: 'Sonsie One', cursive;
+    color: #0B3D91;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 10px #AAAAAA;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3, h4, h5, h6 {
+    font-size: 2.2rem;
+    color: #0B3D91;
+}
+
+p, li {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* || Form Styling */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.6rem;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    background-color: #FF5733;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #E04A2B;
+}
+
+h6 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #FF5733;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h6:hover {
+    color: #E04A2B;
+}

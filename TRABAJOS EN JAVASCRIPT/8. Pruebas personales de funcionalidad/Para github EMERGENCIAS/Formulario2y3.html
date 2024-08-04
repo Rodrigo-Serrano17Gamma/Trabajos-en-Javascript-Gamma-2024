@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso de Usuarios Nueva Página Web Bim III</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <h4>Acceso de Usuarios</h4>
+    <h5>Bienvenido a Los Mejores Pilotos de F1</h5>
+    <br>
+    <h5>Para poder visualizar nuestra página Web, te invitamos a ingresar tu usuario y contraseña</h5>
+
+    <section>
+        <h6 onclick="preguntar()"> Profe Helmut, Click Aquí, por Favor. </h6>
+    </section>
+
+    <form id="loginForm">
+        <h5>Usuarios</h5>
+        <input type="text" id="usuario">
+
+        <h5>Contraseña</h5>
+        <input type="password" id="clave">
+
+        <br>
+        <br>
+        <input type="button" value="Confirmar" onclick="verificar()"> 
+
+        <p>¿No tienes una cuenta? <a href="#" onclick="mostrarRegistro()">Haz clic aquí para registrarte</a></p>
+    </form>    
+
+    <form id="registroForm" style="display:none;">
+        <h4>Registro de Usuarios</h4>
+        <h5>Nombre de Usuario</h5>
+        <input type="text" id="nuevoUsuario" required>
+
+        <h5>Correo Electrónico</h5>
+        <input type="email" id="email" required>
+
+        <h5>Contraseña</h5>
+        <input type="password" id="nuevaClave" required>
+
+        <h5>Confirmar Contraseña</h5>
+        <input type="password" id="confirmarClave" required>
+        
+        <br>
+        <br>
+        <input type="button" value="Registrarse" onclick="registrar()"> 
+        <p>¿Ya tienes una cuenta? <a href="#" onclick="mostrarLogin()">Haz clic aquí para iniciar sesión</a></p>
+    </form>    
+
+    <script>
+        let control = 0;
+        let Contraseñacorrecta = 'ProfeHelmutPass';
+        let Usuariocorrecto = 'Prof.H.Ico.'
+
+        function verificar(){
+            let usuario = document.getElementById('usuario').value;
+            let contraseña = document.getElementById('clave').value;
+
+            // Verificar credenciales de prueba
+            if (usuario === Usuariocorrecto && contraseña === Contraseñacorrecta){
+                window.open("Nueva Página Web.html");
+                return;
+            }
+
+            // Verificar credenciales registradas
+            let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+            let usuarioValido = usuariosRegistrados.find(u => u.usuario === usuario && u.contraseña === contraseña);
+
+            if (usuarioValido) {
+                window.open("Nueva Página Web.html");
+            } else {
+                alert('El usuario o la contraseña es incorrecta, intenta de nuevo.');
+            }
+        }
+
+        function registrar(){
+            let nuevoUsuario = document.getElementById('nuevoUsuario').value;
+            let email = document.getElementById('email').value;
+            let nuevaClave = document.getElementById('nuevaClave').value;
+            let confirmarClave = document.getElementById('confirmarClave').value;
+
+            if(nuevaClave !== confirmarClave){
+                alert('Las contraseñas no coinciden, intenta de nuevo.');
+                return;
+            }
+
+            let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+            usuariosRegistrados.push({ usuario: nuevoUsuario, email: email, contraseña: nuevaClave });
+            localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+
+            alert('Registro exitoso! Ahora puedes iniciar sesión.');
+            mostrarLogin();
+        }
+
+        function mostrarRegistro() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registroForm').style.display = 'block';
+        }
+
+        function mostrarLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registroForm').style.display = 'none';
+        }
+
+        function preguntar() {
+            let respuesta = prompt("¿Cuál es el primer nombre del alumno que hizo esta página web? (Por favor profe, responder en MAYÚSCULAS.)");
+            if (respuesta && respuesta.toUpperCase() === 'RODRIGO') {
+                alert(`Usuario: ${Usuariocorrecto}\nContraseña: ${Contraseñacorrecta}\nPor favor tomar una fotografía profe, para tener a mano sus credenciales.`);
+            } else {
+                alert('Respuesta incorrecta, intenta de nuevo.');
+            }
+        }
+    </script>
+</body>
+</html>
